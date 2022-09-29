@@ -18,7 +18,7 @@ body {
 }
 img, picture, video, canvas, svg {
   display: block;
-  max-width: 100%;
+  width: 100%;
 }
 input, button, textarea, select {
   font: inherit;
@@ -27,3 +27,26 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 /** End of custom reset */
+
+button{
+  cursor: pointer;
+  transition: opacity .3s, transform .3s;
+}button:hover,button:focus{
+  opacity: 80%;
+  transform: scale(0.95);
+}
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5em;
+  background-color: #fff;
+}
+#navLogo{
+  width: clamp(100px, 55%, 300px);
+}
+#navButton{
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
