@@ -11,6 +11,7 @@
 }
 html, body {
   height: 100%;
+  overflow-x: hidden;
 }
 body {
   line-height: 1.5;
@@ -34,26 +35,36 @@ button{
 }button:hover,button:focus{
   opacity: 80%;
   transform: scale(0.95);
+}nav{
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  background-color: #fff;
 }
-nav{
+.nav--container{
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1.5em;
-  background-color: #fff;
-  z-index: 3;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
 }
 #navLogo{
-  width: clamp(100px, 55%, 300px);
+  width: clamp(100px, 55%, 200px);
 }
 #navButton{
   background-color: transparent;
   border: none;
   outline: none;
+}
+.largeNav, .largeNavBtn{
+  display: none;
+}.largeNav{
+  list-style: none;
+  padding: 0%;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
 }
 #mobileNavPanel{
   position: absolute;
@@ -83,8 +94,11 @@ nav{
   text-decoration: underline;
 }
 
+header{
+  background-color: #fafafa;
+}
 .header--image{
-  background-color: #fff;
+  background-color: transparent;
   background-image: url('./images/bg-intro-mobile.svg');
   background-position: center;
   background-repeat: no-repeat;
@@ -109,8 +123,8 @@ nav{
 }.requestInviteBtn{
   border: none;
   outline: none;
-  width: 70%;
-  max-width: 200px;
+  width: 80%;
+  max-width: 180px;
   padding: .8em 0;
   background-color: #2bb7da;
   background-image: linear-gradient(to right, #31d35c, #2bb7da);
@@ -142,7 +156,7 @@ main{
   padding: 0%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(200px, 60%), 1fr));
-  align-items: center;
+  align-items: flex-start;
   grid-gap: 2em;
   max-width: 1045px;
   margin: 0 auto;
@@ -251,4 +265,115 @@ footer{
 }.footer--closing p{
   color: #9698a6;
   font-size: .9rem;
+}
+
+@media(min-width: 700px){
+  nav{
+    position: relative;
+  }
+  #navButton{
+    display: none;
+  }#navLogo{
+    width: 20%;
+    max-width: 170px;
+  }
+  .nav--container{
+    max-width: 1000px;
+    margin: 0 auto;
+    z-index: 22;
+  }
+  .largeNav{
+    display: flex;
+    max-width: 370px;
+  }.largeNav a{
+    text-decoration: none;
+    color: #9698a6;
+  }.largeNav a:hover, .largeNav a:focus{
+    color: #000;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-image: linear-gradient(to right, #31d35c, #2bb7da);
+    border-image-slice: 1;
+  }
+  .largeNavBtn{
+    display: block;
+    width: 20%;
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .header--container{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1150px;
+    margin-left: auto;
+    width: 95%;
+  }.header--article{
+    text-align: left;
+    width: 45%;
+    padding-left: 0%;
+    padding-top: 10%;
+    transform: translateY(0);
+    max-width: 410px;
+  }.header--article h1{
+    font-size: min(5.5vw ,3rem);
+  }
+  .header--image{
+    width: 60%;
+    background-size: 150%;
+    background-position: top left;
+    background-image: url('./images/bg-intro-desktop.svg');
+  }
+  .header--image img{
+    transform: translateY(10%) translateX(10%);
+  }
+
+  main{
+    text-align: left;
+  }.main--container{
+    max-width: 1000px;
+    margin: 0 auto;
+  }.main--article{
+    margin-left: 0%;
+  }.main--listItem div{
+    margin-left: 0;
+  }
+
+  .articles--container{
+    max-width: 1000px;
+    margin: 0 auto;
+  }.articles h2{
+    text-align: left;
+    margin-bottom: 1em;
+  }
+
+  .footer--container{
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 97%;
+  }.footer--imgLinksContainer{
+    align-items: flex-start;
+    margin-bottom: 0%;
+    row-gap: 2.5em;
+  }.footer--imgLinks{
+    width: 100%;
+    max-width: 210px;
+  }.footer--mainLinksContainer{
+    margin-bottom: 0%;
+    flex-direction: row;
+    text-align: left;
+    width: 30%;
+    max-width: 270px;
+    justify-content: space-between;
+    margin-left: 7%;
+  }
+  .footer--closing{
+    margin-left: auto;
+    align-items: flex-end;
+  }
 }
