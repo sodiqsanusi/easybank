@@ -18,7 +18,7 @@ body {
 }
 img, picture, video, canvas, svg {
   display: block;
-  max-width: 100%;
+  width: 100%;
 }
 input, button, textarea, select {
   font: inherit;
@@ -27,3 +27,198 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 /** End of custom reset */
+
+button{
+  cursor: pointer;
+  transition: opacity .3s, transform .3s;
+}button:hover,button:focus{
+  opacity: 80%;
+  transform: scale(0.95);
+}
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5em;
+  background-color: #fff;
+  z-index: 3;
+  position: sticky;
+  top: 0;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
+}
+#navLogo{
+  width: clamp(100px, 55%, 300px);
+}
+#navButton{
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.header--image{
+  background-color: #fff;
+  background-image: url('./images/bg-intro-mobile.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}.header--image img{
+  filter: drop-shadow(1px 5px 5px rgba(0, 0, 0,0.2));
+  transform: translateY(-15%);
+}.header--article{
+  text-align: center;
+  padding: 0 1.25em;
+  transform: translateY(-15%);
+}.header--article h1{
+  color: #2d314d;
+  font-size: min(10.5vw,2.2rem);
+  line-height: 1.25;
+  font-weight: 400;
+  margin-bottom: .5em;
+}.header--article p{
+  color: #9698a6;
+  font-weight: 400;
+  margin-bottom: 2em;
+}.requestInviteBtn{
+  border: none;
+  outline: none;
+  width: 70%;
+  max-width: 200px;
+  padding: .8em 0;
+  background-color: #2bb7da;
+  background-image: linear-gradient(to right, #31d35c, #2bb7da);
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 700;
+  margin-bottom: 1.5em;
+}
+
+main{
+  background-color: #f3f4f6;
+  padding: 3.5em 1.5em;
+  text-align: center;
+}.main--article{
+  max-width: 470px;
+  margin: 0 auto 3.5em;
+}.main--article h2{
+  font-size: 2rem;
+  color: #2d314d;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: .5em;
+}.main--article p{
+  color: #9698a6;
+  font-weight: 400;
+}
+.main--list{
+  list-style: none;
+  padding: 0%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 60%), 1fr));
+  align-items: center;
+  grid-gap: 2em;
+  max-width: 1045px;
+  margin: 0 auto;
+}.main--listItem{
+  max-width: 470px;
+}.main--listItem div{
+  width: 30%;
+  max-width: 100px;
+  margin: 0 auto 1.5em;
+}.main--listItem h3{
+  color: #2d314d;
+  font-weight: 400;
+  font-size: 1.3rem;
+  margin-bottom: .5em;
+}.main--listItem p{
+  color: #9698a6;
+  font-weight: 400;
+}
+
+.articles{
+  padding: 5em 1em 4em;
+  background-color: #fafafa;
+}.articles h2{
+  text-align: center;
+  color: #2d314d;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: .7em;
+}.articles--list{
+  list-style: none;
+  padding: 0%;
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 60%), 1fr));
+  max-width: 1045px;
+  margin: 0 auto;
+  justify-content: center;
+}.articles--listItem{
+  border-radius: 8px;
+  background-color: #fff;
+}.articles--listItem img{
+  border-radius: 8px 8px 0 0;
+}.articles--listArticle{
+  width: 85%;
+  margin: 2em auto 3em;
+}.articles--listArticle p{
+  color: #9698a6;
+}.listArticle--author{
+  font-size: .75rem;
+  margin-bottom: 1em;
+}.articles--listArticle a{
+  text-decoration: none;
+  color: #2d314d;
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: .5em;
+}.articles--listArticle a:hover,.articles--listArticle a:focus{
+  color: #2bb7da;
+}.articles--listArticle p:last-of-type{
+  font-size: .9rem;
+}
+
+footer{
+  background-color: #2d314d;
+  padding: 2em 0;
+}.footer--imgLinksContainer{
+  display: flex;
+  align-items: center;
+  row-gap: 1.5em;
+  flex-direction: column;
+  margin-bottom: 1.5em;
+}.footer--imgLinks{
+  list-style: none;
+  padding: 0%;
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 160px;
+}.footer--imgLinks a:hover img, .footer--imgLinks a:focus img{
+  filter: invert(18%) sepia(65%) saturate(6690%) hue-rotate(83deg) brightness(109%) contrast(80%);
+}
+
+.footer--mainLinksContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1.5em;
+}.footer--mainLinks{
+  list-style: none;
+  padding: 0%;
+  line-height: 2;
+}.footer--mainLinks a{
+  text-decoration: none;
+  color: #fafafa;
+  font-size: .9rem;
+}.footer--mainLinks a:hover,.footer--mainLinks a:focus{
+  color: #31d35c;
+}.footer--closing{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}.footer--closing p{
+  color: #9698a6;
+  font-size: .9rem;
+}
