@@ -44,6 +44,7 @@ nav{
   z-index: 3;
   position: sticky;
   top: 0;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
 }
 #navLogo{
   width: clamp(100px, 55%, 300px);
@@ -110,10 +111,12 @@ main{
 .main--list{
   list-style: none;
   padding: 0%;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 60%), 1fr));
   align-items: center;
-  flex-direction: column;
-  row-gap: 2em;
+  grid-gap: 2em;
+  max-width: 1045px;
+  margin: 0 auto;
 }.main--listItem{
   max-width: 470px;
 }.main--listItem div{
@@ -128,4 +131,45 @@ main{
 }.main--listItem p{
   color: #9698a6;
   font-weight: 400;
+}
+
+.articles{
+  padding: 5em 1em 4em;
+  background-color: #fafafa;
+}.articles h2{
+  text-align: center;
+  color: #2d314d;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: .7em;
+}.articles--list{
+  list-style: none;
+  padding: 0%;
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 60%), 1fr));
+  max-width: 1045px;
+  margin: 0 auto;
+  justify-content: center;
+}.articles--listItem{
+  border-radius: 8px;
+  background-color: #fff;
+}.articles--listItem img{
+  border-radius: 8px 8px 0 0;
+}.articles--listArticle{
+  width: 85%;
+  margin: 2em auto 3em;
+}.articles--listArticle p{
+  color: #9698a6;
+}.listArticle--author{
+  font-size: .75rem;
+  margin-bottom: 1em;
+}.articles--listArticle h3{
+  color: #2d314d;
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: .5em;
+}.articles--listArticle p:last-of-type{
+  font-size: .9rem;
 }
